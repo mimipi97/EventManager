@@ -1,0 +1,60 @@
+﻿@using Eventmanagement.Entities;
+@using Eventmanagement.Repositories;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dates Change</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <h1 style="font-size:26px;">Dates Change</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                    @{
+                        Event even = (Event)ViewData["event"];
+                    }
+                    <form action="/EventManagement/EditDates" method="post">
+                        <input type="hidden" name="Id" value="@even.Id" />
+                        <input type="hidden" name="Name" value="@even.Name" />
+                        <input type="hidden" name="Location" value="@even.Location" />
+                        <fieldset>
+                            <legend>Edit Dates</legend>
+                            <table>
+                                <tr>
+                                    <td>Please enter valid dates:</td>
+                                </tr>
+                                <tr>
+                                    <td>Start Date and Time:</td>
+                                    <td><input type="datetime" name="StartDate" value="@even.StartDate" /></td>
+                                </tr>
+                                <tr>
+                                    <td>End Date and Time:</td>
+                                    <td><input type="datetime" name="EndDate" value="@even.EndDate" /></td>
+                                </tr>
+                                <tr>
+                                    <td>The start date must be before the end date. </td>
+                                </tr>
+                                <tr>
+                                <td colspan="1"><input type="submit" value="Save" /></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

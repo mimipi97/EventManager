@@ -1,0 +1,63 @@
+﻿@using Eventmanagement.Entities;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Event Management</title>
+</head>
+<body>
+
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <h1 style="font-size:26px;">Manage Events</h1>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>
+                    <p style="font-size:18px;">Welcome to  the event management.</p>
+                    <p><a href="/EventManagement/EditEvent">Create new event</a></p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <table border="1">
+                        <tr>
+                            <th>Name</th>
+                            <th></th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                        @foreach (Event even in (List<Event>)ViewData["events"])
+                        {
+                            var detailsLink = "/EventManagement/EventDetails?id=" + even.Id;
+                            var editLink = "/EventManagement/EditEvent?id=" + even.Id;
+                            var deleteLink = "/EventManagement/DeleteEvent?id=" + even.Id;
+
+                            <tr>
+                                <td>@even.Name</td>
+                                <td><a href="@detailsLink">details</a></td>
+                                <td><a href="@editLink">edit</a></td>
+                                <td><a href="@deleteLink">delete</a></td>
+                            </tr>
+                        }
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <a href="/Home/Index">Back</a>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

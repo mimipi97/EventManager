@@ -1,0 +1,64 @@
+﻿@using Eventmanagement.Entities;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Event Management</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <h1 style="font-size:26px;">Edit/Create Event</h1>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td>
+                    @{
+                        Event even = (Event)ViewData["event"];
+                    }
+                    <form action="/EventManagement/EditEvent" method="post">
+                        <input type="hidden" name="Id" value="@even.Id" />
+                        <fieldset>
+                            <legend>Edit/Create Event</legend>
+                            <table>
+                                <tr>
+                                    <td>Name:</td>
+                                    <td><input type="text" name="Name" value="@even.Name" /></td>
+                                </tr>
+                                <tr>
+                                    <td>Location:</td>
+                                    <td><input type="text" name="Location" value="@even.Location" /></td>
+                                </tr>
+                                <tr>
+                                    <td><p>Please make sure the dates are in valid format. </p><td>
+                                </tr>
+                                <tr>
+                                    <td>Start Date and Time:</td>
+                                    <td><input type="datetime" name="StartDate" value="@even.StartDate" /></td>
+                                    </tr>
+                                    <tr>
+                                    <td>End Date and Time:</td>
+                                    <td><input type="datetime" name="EndDate" value="@even.EndDate" /></td>
+                                   </tr>
+                                <tr>
+                                    <td colspan="2"><input type="submit" value="Save" />&nbsp;<a href="/EventManagement/Index">Cancel</a></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </form>
+                </td>
+            </tr>
+
+        </table>
+    </div>
+</body>
+</html>

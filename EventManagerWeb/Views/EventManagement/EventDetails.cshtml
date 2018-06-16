@@ -1,0 +1,70 @@
+﻿@using Eventmanagement.Entities;
+@using Eventmanagement.Repositories;
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Event Management</title>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td>
+                    <h1 style="font-size:26px;">Event Details</h1>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul style="list-style:none;">
+                        <li style="float:left; width:200px; text-decoration:none; color:black;"><a href="/EventManagement/EditEvent">Create new event</a></li>
+                        <li style="float:left; width:200px; text-decoration:none; color:black;"><a href="/EventManagement/Index">Back</a></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @{
+                        Event even = (Event)ViewData["event"];
+                        var editLink = "/EventManagement/EditEvent?id=" + even.Id;
+                        var deleteLink = "/EventManagement/DeleteEvent?id=" + even.Id;
+                    }
+
+                    <table>
+                        <tr>
+                            <td>Name:</td>
+                            <td>@even.Name
+                            <td>
+                        </tr>
+                        <tr>
+                            <td>Location:</td>
+                            <td>@even.Location</td>
+                        </tr>
+                        <tr>
+                            <td>Start date:</td>
+                            <td>@even.StartDate</td>
+                        </tr>
+                        <tr>
+                            <td>End date:</td>
+                            <td>@even.EndDate</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <ul style="list-style:none;">
+                                    <li color:black;"><a href="@editLink">Edit event</a></li>
+                                    <li color:black;"><a href="@deleteLink">Delete event</a></li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

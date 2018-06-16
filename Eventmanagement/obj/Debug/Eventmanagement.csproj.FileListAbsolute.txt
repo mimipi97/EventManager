@@ -1,0 +1,6 @@
+D:\стаж\EventManagerWeb\Eventmanagement\bin\Debug\Eventmanagement.exe.config
+D:\стаж\EventManagerWeb\Eventmanagement\bin\Debug\Eventmanagement.exe
+D:\стаж\EventManagerWeb\Eventmanagement\bin\Debug\Eventmanagement.pdb
+D:\стаж\EventManagerWeb\Eventmanagement\obj\Debug\Eventmanagement.csprojResolveAssemblyReference.cache
+D:\стаж\EventManagerWeb\Eventmanagement\obj\Debug\Eventmanagement.exe
+D:\стаж\EventManagerWeb\Eventmanagement\obj\Debug\Eventmanagement.pdb
